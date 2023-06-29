@@ -1,0 +1,408 @@
+﻿@model List<WebDocTruyen.Context.Truyen>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div id="main" class="main" data-type="home" role="main" itemscope itemprop="mainContentOfPage">
+    <div class="container">
+        <!--Middle body-->
+        <div class="main-col">
+            <section class="card-box">
+                <header>
+                    <h2>
+                        TRUYỆN ĐỀ CỬ <i class="fa-solid fa-angle-right"></i>
+                    </h2>
+                </header>
+                <nav>
+                    @foreach (var item in Model.Take(4))
+                    {
+                        <a href="@Url.Action("Category", "TheLoai", new { id = item.Ma_Theloai})" title="Truyện Ngôn Tình">@item.TheLoai.Ten_Theloai</a>
+                    }
+                </nav>
+
+                <div class="swipe-stories">
+                    <ul>
+                        @foreach (var item in Model.Take(3))
+                        {
+                            <li>
+                                <div class="story-hot" data-id="42816" itemscope="" itemtype="https://schema.org/Book">
+                                    <meta itemprop="bookFormat" content="EBook">
+                                    <a href="@Url.Action("Detail", "ChiTiet", new { id = item.Ma_Truyen})" title="@item.Ten_Truyen" class="thumb">
+                                        <img src="@item.HinhDaiDien" alt="[Thập Niên 70] Vợ Cả Mỹ Nhân Bị Bệnh Trong Đại Viện">
+                                    </a>
+
+                                </div>
+                            </li>
+                        }
+
+
+                    </ul>
+                </div>
+            </section>
+            <section class="card-box">
+                <header>
+                    <a href="" title="Truyện Dịch Chọn lọc">
+                        TRUYỆN DỊCH CHỌN LỌC <i class="fa fa-angle-right"></i>
+                    </a>
+                </header>
+
+                <div class="grid-stories">
+                    @foreach (var item in Model.Take(8))
+                    {
+                        <div class="story-grid" data-id="40949" itemscope="" itemtype="https://schema.org/Book">
+                            <meta itemprop="bookFormat" content="EBook">
+                            <a href="@Url.Action("Detail", "ChiTiet", new { id = item.Ma_Truyen})" title="Thập Niên 70: Phấn Đấu Làm Giàu" class="thumb">
+                                <img src="@item.HinhDaiDien" alt="Thập Niên 70: Phấn Đấu Làm Giàu">
+                            </a>
+                            <div class="info">
+                                <h3 class="title" itemprop="name">
+                                    <a href="" itemprop="url" title="Thập Niên 70: Phấn Đấu Làm Giàu">@item.Ten_Truyen</a>
+                                </h3>
+                                <p class="last-chapter">Full</p>
+                                <meta itemprop="author" content="Hồ Mạch">
+                            </div>
+                            <span class="label-status-end"></span>
+                            <span class="label-hot-0"></span>
+                        </div>
+                    }
+
+
+                </div>
+                <footer>
+                    <a class="show-more-btn" rel="nofollow" title="TRUYỆN DỊCH CHỌN LỌC" href="">
+                        XEM THÊM <i class="fa fa-angle-down"></i>
+                    </a>
+                </footer>
+            </section>
+            <section class="card-box">
+                <header>
+                    <a href="" title="Truyện Mới Cập Nhật">
+                        Truyện Mới Cập Nhật <i class="fa fa-angle-right"></i>
+                    </a>
+                </header>
+                <nav>
+                    <div>
+                        @foreach (var item in Model.Take(4))
+                        {
+                            <a href="@Url.Action("Category", "TheLoai", new { id = item.Ma_Theloai})" title="Truyện Ngôn Tình">@item.TheLoai.Ten_Theloai</a>
+                        }
+
+                    </div>
+                </nav>
+                <div class="list-stories">
+                    <ul>
+                        <li class="story-list" data-id="46858" itemscope="" itemtype="https://schema.org/Book">
+                            <meta itemprop="bookFormat" content="EBook">
+                            <div class="info">
+                                <h3 class="title" itemprop="name">
+                                    <a href="" itemprop="url" title="Tổng Tài Xấu Xa, Cảm Phiền Tránh Ra">Tổng Tài Xấu Xa, Cảm Phiền Tránh Ra</a>
+                                </h3>
+                                <span class="vip-0"></span>
+                                <label class="label label-type-0"></label>
+                                <meta itemprop="author" content="Tư Không Vũ Tịch">
+                            </div>
+                            <p class="last-chapter">Chương 196</p>
+                            <p class="last-updated">1687238441</p>
+                        </li>
+                        <li class="story-list" data-id="48496" itemscope="" itemtype="https://schema.org/Book">
+                            <meta itemprop="bookFormat" content="EBook">
+                            <div class="info">
+                                <h3 class="title" itemprop="name">
+                                    <a href="" itemprop="url" title="Làm Giàu: Cuộc Sống Điền Viên Của Nông Nữ">Làm Giàu: Cuộc Sống Điền Viên Của Nông Nữ</a>
+                                </h3>
+                                <span class="vip-2"></span>
+                                <meta itemprop="author" content="Lê Mạc Mạch">
+                            </div>
+                            <p class="last-chapter">Chương 198</p>
+                            <p class="last-updated">1687238227</p>
+                        </li>
+                        <li class="story-list" data-id="48865" itemscope="" itemtype="https://schema.org/Book">
+                            <meta itemprop="bookFormat" content="EBook">
+                            <div class="info">
+                                <h3 class="title" itemprop="name">
+                                    <a href="" itemprop="url" title="Tôi Tìm Thấy Cậu Rồi">Tôi Tìm Thấy Cậu Rồi</a>
+                                </h3>
+                                <span class="vip-0"></span>
+                                <label class="label label-type-0"></label>
+                                <meta itemprop="author" content="Uyên Minh">
+                            </div>
+                            <p class="last-chapter">Chương 16</p>
+                            <p class="last-updated">1687237949</p>
+                        </li>
+                        <li class="story-list" data-id="42649" itemscope="" itemtype="https://schema.org/Book">
+                            <meta itemprop="bookFormat" content="EBook">
+                            <div class="info">
+                                <h3 class="title" itemprop="name">
+                                    <a href="" itemprop="url" title="Căn Cứ Số 7 (Bản Dịch)">Căn Cứ Số 7 (Bản Dịch)</a>
+                                </h3>
+                                <span class="vip-2"></span>
+                                <meta itemprop="author" content="Tịnh Vô Ngân">
+                            </div>
+                            <p class="last-chapter">Chương 1367</p>
+                            <p class="last-updated">1687237860</p>
+                        </li>
+                        <li class="story-list" data-id="27808" itemscope="" itemtype="https://schema.org/Book">
+                            <meta itemprop="bookFormat" content="EBook">
+                            <div class="info">
+                                <h3 class="title" itemprop="name">
+                                    <a href="" itemprop="url" title="Khấu Vấn Tiên Đạo">Khấu Vấn Tiên Đạo</a>
+                                </h3>
+                                <span class="vip-2"></span>
+                                <meta itemprop="author" content="Vũ Đả Thanh Thạch">
+                            </div>
+                            <p class="last-chapter">Chương 2327</p>
+                            <p class="last-updated">1687237732</p>
+                        </li>
+                        <li class="story-list" data-id="46883" itemscope="" itemtype="https://schema.org/Book">
+                            <meta itemprop="bookFormat" content="EBook">
+                            <div class="info">
+                                <h3 class="title" itemprop="name">
+                                    <a href="" itemprop="url" title="Tiểu Thứ Nữ">Tiểu Thứ Nữ</a>
+                                </h3>
+                                <span class="vip-2"></span>
+                                <meta itemprop="author" content="Xuân Vị Lục">
+                            </div>
+                            <p class="last-chapter">Chương 122</p>
+                            <p class="last-updated">1687237570</p>
+                        </li>
+                        <li class="story-list" data-id="36868" itemscope="" itemtype="https://schema.org/Book">
+                            <meta itemprop="bookFormat" content="EBook">
+                            <div class="info">
+                                <h3 class="title" itemprop="name">
+                                    <a href="" itemprop="url" title="Xuyên Thành Hòn Ngọc Quý Ở Năm 70">Xuyên Thành Hòn Ngọc Quý Ở Năm 70</a>
+                                </h3>
+                                <span class="vip-2"></span>
+                                <meta itemprop="author" content="Tử Y">
+                            </div>
+                            <p class="last-chapter">Full</p>
+                            <p class="last-updated">1687237540</p>
+                        </li>
+                        <li class="story-list" data-id="36532" itemscope="" itemtype="https://schema.org/Book">
+                            <meta itemprop="bookFormat" content="EBook">
+                            <div class="info">
+                                <h3 class="title" itemprop="name">
+                                    <a href="" itemprop="url" title="[Thập Niên 80] Gả Cho Ác Bá">[Thập Niên 80] Gả Cho Ác Bá</a>
+                                </h3>
+                                <span class="vip-2"></span>
+                                <meta itemprop="author" content="Thư Ca">
+                            </div>
+                            <p class="last-chapter">Full</p>
+                            <p class="last-updated">1687237536</p>
+                        </li>
+
+
+                    </ul>
+                </div>
+                <footer>
+                    <a class="show-more-btn" rel="nofollow" title="Truyện mới cập nhật" href="">
+                        XEM THÊM <i class="fa fa-angle-down"></i>
+                    </a>
+                </footer>
+            </section>
+
+
+        </div>
+        <!-- Right sldebar body Phần chung-->
+        <aside class="right-sidebar">
+
+            <!-- Thể loại truyện -->
+            <section class="card-box">
+                <header>Thể loại truyện</header>
+                <div class="categories clearfix">
+                    @foreach (var item in Model.Take(4))
+                    {
+                        <a href="@Url.Action("Category", "TheLoai", new { id = item.Ma_Theloai})" title="@item.TheLoai.Ten_Theloai"><i class="fa-solid fa-tag"></i>@item.TheLoai.Ten_Theloai</a>
+                    }
+
+
+
+                </div>
+            </section>
+
+            <!-- Review truyện -->
+            <section class="card-box">
+                <header>
+                    <a href="" title="Review Truyện">
+                        Review Truyện <i class="fa fa-angle-right"></i>
+                    </a>
+                </header>
+                <ul class="review-list">
+
+
+                    <li class="news-item clearfix">
+                        <a href="" class="thumb" title="" rel="nofollow">
+                            <img class="news-item__img" src="~/Content/img/pham_nhan_tu_tien.jpg" alt="">
+                        </a>
+                        <h4 class="title">
+                            <a href="" title="">Top truyện xuyên không được đề cử tháng 8-2021</a>
+                        </h4>
+                    </li>
+                    <li class="news-item clearfix">
+                        <a href="" class="thumb" title="" rel="nofollow">
+                            <img class="news-item__img" src="~/Content/img/dau_pha_thuong_khung.jpg" alt="">
+                        </a>
+                        <h4 class="title">
+                            <a href="" title="">Top truyện xuyên không hay nhất mọi thời đại</a>
+                        </h4>
+                    </li>
+
+                    <li class="news-item clearfix">
+                        <a href="" class="thumb" title="" rel="nofollow">
+                            <img class="news-item__img" src="~/Content/img/the_gioi_hoan_my.jpg" alt="">
+                        </a>
+                        <h4 class="title">
+                            <a href="" title="">Top truyện trọng sinh hay nhất nửa đầu năm 2021</a>
+                        </h4>
+                    </li>
+
+
+
+                </ul>
+                <footer>
+                    <a class="show-more-btn" rel="nofollow" title="Truyện Full" href="@Url.Action("ReviewMore", "ReviewXemThem")">
+                        XEM THÊM <i class="fa fa-angle-down"></i>
+                    </a>
+                </footer>
+            </section>
+
+            <!-- Top truyện hay -->
+            <section class="card-box">
+                <header>
+                    <a href="" title="Top Truyện Hay">
+                        Top Truyện Hay <i class="fa fa-angle-right"></i>
+                    </a>
+                </header>
+                <div class="top-stories">
+                    <ul>
+                        <li class="story-top" data-id="3910" itemscope="" itemtype="https://schema.org/Book">
+                            <meta itemprop="bookFormat" content="EBook">
+                            <h3 class="title" itemprop="name">
+                                <a href="" itemprop="url" title="Ngạo Thế Đan Thần">Ngạo Thế Đan Thần</a>
+                            </h3>
+                            <p class="viewed">
+                                <i class="fa-solid fa-eye"></i>
+                                293,679,652
+                            </p>
+                        </li>
+                        <li class="story-top" data-id="13601" itemscope="" itemtype="https://schema.org/Book">
+                            <meta itemprop="bookFormat" content="EBook">
+                            <h3 class="title" itemprop="name">
+                                <a href="" itemprop="url" title="Thần Đạo Đan Tôn">Thần Đạo Đan Tôn</a>
+                            </h3>
+                            <p class="viewed">
+                                <i class="fa-solid fa-eye"></i>
+                                112,297,571
+                            </p>
+                        </li>
+                        <li class="story-top" data-id="7602" itemscope="" itemtype="https://schema.org/Book">
+                            <meta itemprop="bookFormat" content="EBook">
+                            <h3 class="title" itemprop="name">
+                                <a href="" itemprop="url" title="Linh Vũ Thiên Hạ">Linh Vũ Thiên Hạ</a>
+                            </h3>
+                            <p class="viewed">
+                                <i class="fa-solid fa-eye"></i>
+                                94,080,996
+                            </p>
+                        </li>
+                        <li class="story-top" data-id="109" itemscope="" itemtype="https://schema.org/Book">
+                            <meta itemprop="bookFormat" content="EBook">
+                            <h3 class="title" itemprop="name">
+                                <a href="" itemprop="url" title="Kiếm Đạo Độc Tôn">Kiếm Đạo Độc Tôn</a>
+                            </h3>
+                            <p class="viewed">
+                                <i class="fa-solid fa-eye"></i>
+                                89,188,944
+                            </p>
+                        </li>
+                        <li class="story-top" data-id="15028" itemscope="" itemtype="https://schema.org/Book">
+                            <meta itemprop="bookFormat" content="EBook">
+                            <h3 class="title" itemprop="name">
+                                <a href="" itemprop="url" title="Độc Y Thần Nữ: Phúc Hắc Lãnh Đế Cuồng Sủng Thê">Độc Y Thần Nữ: Phúc Hắc Lãnh Đế Cuồng Sủng Thê</a>
+                            </h3>
+                            <p class="viewed">
+                                <i class="fa-solid fa-eye"></i>
+                                76,278,162
+                            </p>
+                        </li>
+
+                    </ul>
+                </div>
+                <footer>
+                    <a class="show-more-btn" rel="nofollow" title="Top Truyện hay" href="">
+                        XEM THÊM <i class="fa fa-angle-down"></i>
+                    </a>
+                </footer>
+
+                <!-- Truyện mới đăng -->
+            </section>
+            <section class="card-box">
+                <header>
+                    <a href="" title="Truyện mới đăng">
+                        Truyện mới đăng <i class="fa fa-angle-right"></i>
+                    </a>
+                </header>
+                <div class="top-stories">
+                    <ul>
+                        <li class="story-top" data-id="48941" itemscope="" itemtype="https://schema.org/Book">
+                            <meta itemprop="bookFormat" content="EBook">
+                            <h3 class="title" itemprop="name">
+                                <a href="" itemprop="url" title="Những Cơn Mưa Cuối Mùa">Những Cơn Mưa Cuối Mùa</a>
+                            </h3>
+                            <p class="viewed">
+                                <i class="fa-solid fa-eye"></i>
+                                0
+                            </p>
+                        </li>
+                        <li class="story-top" data-id="48940" itemscope="" itemtype="https://schema.org/Book">
+                            <meta itemprop="bookFormat" content="EBook">
+                            <h3 class="title" itemprop="name">
+                                <a href="" itemprop="url" title="Ánh Sáng Của Sao Bắc Đẩu">Ánh Sáng Của Sao Bắc Đẩu</a>
+                            </h3>
+                            <p class="viewed">
+                                <i class="fa-solid fa-eye"></i>
+                                0
+                            </p>
+                        </li>
+                        <li class="story-top" data-id="48939" itemscope="" itemtype="https://schema.org/Book">
+                            <meta itemprop="bookFormat" content="EBook">
+                            <h3 class="title" itemprop="name">
+                                <a href="" itemprop="url" title="Tình Địch Giả Tưởng">Tình Địch Giả Tưởng</a>
+                            </h3>
+                            <p class="viewed">
+                                <i class="fa-solid fa-eye"></i>
+                                0
+                            </p>
+                        </li>
+                        <li class="story-top" data-id="48938" itemscope="" itemtype="https://schema.org/Book">
+                            <meta itemprop="bookFormat" content="EBook">
+                            <h3 class="title" itemprop="name">
+                                <a href="" itemprop="url" title="Trọng Sinh Chi Tầm Thạch Giả">Trọng Sinh Chi Tầm Thạch Giả</a>
+                            </h3>
+                            <p class="viewed">
+                                <i class="fa-solid fa-eye"></i>
+                                0
+                            </p>
+                        </li>
+                        <li class="story-top" data-id="48937" itemscope="" itemtype="https://schema.org/Book">
+                            <meta itemprop="bookFormat" content="EBook">
+                            <h3 class="title" itemprop="name">
+                                <a href="" itemprop="url" title="Vì Người Rễ Tình Đâm Sâu">Vì Người Rễ Tình Đâm Sâu</a>
+                            </h3>
+                            <p class="viewed">
+                                <i class="fa-solid fa-eye"></i>
+                                0
+                            </p>
+                        </li>
+
+                    </ul>
+                </div>
+                <footer>
+                    <a class="show-more-btn" rel="nofollow" title="Truyện mới đăng" href="">
+                        XEM THÊM <i class="fa fa-angle-down"></i>
+                    </a>
+                </footer>
+            </section>
+        </aside>
+    </div>
+</div>

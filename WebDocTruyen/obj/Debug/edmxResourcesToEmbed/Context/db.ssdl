@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WebDocTruyenModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ChucNang">
+    <Key>
+      <PropertyRef Name="Ma_ChucNang" />
+    </Key>
+    <Property Name="Ma_ChucNang" Type="int" Nullable="false" />
+    <Property Name="Ten_ChucNang" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Chuong">
+    <Key>
+      <PropertyRef Name="Ma_Chuong" />
+    </Key>
+    <Property Name="Ma_Chuong" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="So_Chuong" Type="int" />
+    <Property Name="Ten_Chuong" Type="nvarchar(max)" />
+    <Property Name="NoiDung_Chuong" Type="nvarchar(max)" />
+    <Property Name="Luotview_Chuong" Type="int" />
+    <Property Name="Ma_Truyen" Type="int" />
+  </EntityType>
+  <EntityType Name="DanhGia">
+    <Key>
+      <PropertyRef Name="Ma_DanhGia" />
+    </Key>
+    <Property Name="Ma_DanhGia" Type="int" Nullable="false" />
+    <Property Name="NoiDung_DanhGia" Type="nvarchar(max)" />
+    <Property Name="Ma_Nguoidung" Type="int" />
+    <Property Name="Ma_Truyen" Type="int" />
+  </EntityType>
+  <EntityType Name="Nguoidung">
+    <Key>
+      <PropertyRef Name="Ma_Nguoidung" />
+    </Key>
+    <Property Name="Ma_Nguoidung" Type="int" Nullable="false" />
+    <Property Name="Ten_Nguoidung" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email_Nguoidung" Type="nvarchar" MaxLength="50" />
+    <Property Name="Pass_Nguoidung" Type="nvarchar" MaxLength="10" />
+    <Property Name="Quyen_Nguoidung" Type="bit" />
+  </EntityType>
+  <EntityType Name="PhanQuyen">
+    <Key>
+      <PropertyRef Name="maNguoiDung" />
+      <PropertyRef Name="maChucNang" />
+    </Key>
+    <Property Name="maNguoiDung" Type="int" Nullable="false" />
+    <Property Name="maChucNang" Type="int" Nullable="false" />
+    <Property Name="Ghi_Chu" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TheLoai">
+    <Key>
+      <PropertyRef Name="Ma_Theloai" />
+    </Key>
+    <Property Name="Ma_Theloai" Type="int" Nullable="false" />
+    <Property Name="Ten_Theloai" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Truyen">
+    <Key>
+      <PropertyRef Name="Ma_Truyen" />
+    </Key>
+    <Property Name="Ma_Truyen" Type="int" Nullable="false" />
+    <Property Name="Ten_Truyen" Type="nvarchar(max)" />
+    <Property Name="HinhDaiDien" Type="nvarchar" MaxLength="50" />
+    <Property Name="MoTa_Truyen" Type="nvarchar(max)" />
+    <Property Name="NgayDang_Truyen" Type="datetime" />
+    <Property Name="Ma_Theloai" Type="int" />
+    <Property Name="Ma_Nguoidung" Type="int" />
+  </EntityType>
+  <Association Name="FK__Chuong__Ma_Truye__2C3393D0">
+    <End Role="Truyen" Type="Self.Truyen" Multiplicity="0..1" />
+    <End Role="Chuong" Type="Self.Chuong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Truyen">
+        <PropertyRef Name="Ma_Truyen" />
+      </Principal>
+      <Dependent Role="Chuong">
+        <PropertyRef Name="Ma_Truyen" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DanhGia__Ma_Nguo__2F10007B">
+    <End Role="Nguoidung" Type="Self.Nguoidung" Multiplicity="0..1" />
+    <End Role="DanhGia" Type="Self.DanhGia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nguoidung">
+        <PropertyRef Name="Ma_Nguoidung" />
+      </Principal>
+      <Dependent Role="DanhGia">
+        <PropertyRef Name="Ma_Nguoidung" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DanhGia__Ma_Truy__300424B4">
+    <End Role="Truyen" Type="Self.Truyen" Multiplicity="0..1" />
+    <End Role="DanhGia" Type="Self.DanhGia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Truyen">
+        <PropertyRef Name="Ma_Truyen" />
+      </Principal>
+      <Dependent Role="DanhGia">
+        <PropertyRef Name="Ma_Truyen" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Truyen__Ma_Nguoi__29572725">
+    <End Role="Nguoidung" Type="Self.Nguoidung" Multiplicity="0..1" />
+    <End Role="Truyen" Type="Self.Truyen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nguoidung">
+        <PropertyRef Name="Ma_Nguoidung" />
+      </Principal>
+      <Dependent Role="Truyen">
+        <PropertyRef Name="Ma_Nguoidung" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Truyen__Ma_Thelo__286302EC">
+    <End Role="TheLoai" Type="Self.TheLoai" Multiplicity="0..1" />
+    <End Role="Truyen" Type="Self.Truyen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TheLoai">
+        <PropertyRef Name="Ma_Theloai" />
+      </Principal>
+      <Dependent Role="Truyen">
+        <PropertyRef Name="Ma_Theloai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhanQuyen_ChucNang">
+    <End Role="ChucNang" Type="Self.ChucNang" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PhanQuyen" Type="Self.PhanQuyen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ChucNang">
+        <PropertyRef Name="Ma_ChucNang" />
+      </Principal>
+      <Dependent Role="PhanQuyen">
+        <PropertyRef Name="maChucNang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PhanQuyen_Nguoidung">
+    <End Role="Nguoidung" Type="Self.Nguoidung" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PhanQuyen" Type="Self.PhanQuyen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nguoidung">
+        <PropertyRef Name="Ma_Nguoidung" />
+      </Principal>
+      <Dependent Role="PhanQuyen">
+        <PropertyRef Name="maNguoiDung" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="WebDocTruyenModelStoreContainer">
+    <EntitySet Name="ChucNang" EntityType="Self.ChucNang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Chuong" EntityType="Self.Chuong" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DanhGia" EntityType="Self.DanhGia" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Nguoidung" EntityType="Self.Nguoidung" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PhanQuyen" EntityType="Self.PhanQuyen" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TheLoai" EntityType="Self.TheLoai" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Truyen" EntityType="Self.Truyen" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Chuong__Ma_Truye__2C3393D0" Association="Self.FK__Chuong__Ma_Truye__2C3393D0">
+      <End Role="Truyen" EntitySet="Truyen" />
+      <End Role="Chuong" EntitySet="Chuong" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DanhGia__Ma_Nguo__2F10007B" Association="Self.FK__DanhGia__Ma_Nguo__2F10007B">
+      <End Role="Nguoidung" EntitySet="Nguoidung" />
+      <End Role="DanhGia" EntitySet="DanhGia" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DanhGia__Ma_Truy__300424B4" Association="Self.FK__DanhGia__Ma_Truy__300424B4">
+      <End Role="Truyen" EntitySet="Truyen" />
+      <End Role="DanhGia" EntitySet="DanhGia" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Truyen__Ma_Nguoi__29572725" Association="Self.FK__Truyen__Ma_Nguoi__29572725">
+      <End Role="Nguoidung" EntitySet="Nguoidung" />
+      <End Role="Truyen" EntitySet="Truyen" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Truyen__Ma_Thelo__286302EC" Association="Self.FK__Truyen__Ma_Thelo__286302EC">
+      <End Role="TheLoai" EntitySet="TheLoai" />
+      <End Role="Truyen" EntitySet="Truyen" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhanQuyen_ChucNang" Association="Self.FK_PhanQuyen_ChucNang">
+      <End Role="ChucNang" EntitySet="ChucNang" />
+      <End Role="PhanQuyen" EntitySet="PhanQuyen" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PhanQuyen_Nguoidung" Association="Self.FK_PhanQuyen_Nguoidung">
+      <End Role="Nguoidung" EntitySet="Nguoidung" />
+      <End Role="PhanQuyen" EntitySet="PhanQuyen" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

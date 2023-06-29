@@ -1,0 +1,76 @@
+﻿@model WebDocTruyen.Context.Truyen
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="color: red;">Details</h2>
+
+<div style="margin-left:300px;">
+    <h4>Truyện</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Ma_Truyen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ma_Truyen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ten_Truyen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ten_Truyen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HinhDaiDien)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HinhDaiDien)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MoTa_Truyen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MoTa_Truyen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayDang_Truyen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayDang_Truyen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ma_Theloai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ma_Theloai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ma_Nguoidung)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ma_Nguoidung)
+        </dd>
+
+    </dl>
+</div>
+
+<p style="margin-left:300px;">
+    @Html.ActionLink("Edit", "HomeAdmin", new { id = Model.Ma_Truyen }) |
+    @Html.ActionLink("Back to List", "DanhSach")
+</p>

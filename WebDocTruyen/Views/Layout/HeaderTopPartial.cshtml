@@ -1,0 +1,26 @@
+﻿
+<li>
+
+    @if (Session["user"] != null)
+    {
+        <a href="" title="" rel="nofollow" target="_blank">
+
+            <i class="fa-solid fa-user"></i>
+            @Session["user"]
+        </a>
+        <a href="@Url.Action("Logout", "Home")" title="" rel="nofollow" target="_blank">
+            Đăng Xuất
+        </a>
+
+    }
+    else
+    {
+        <a href="@Url.Action("Login", "Home")" title="" rel="nofollow" target="_blank">
+            Đăng Nhập
+        </a>
+        <a href="@Url.Action("Register", "Home")" title="" rel="nofollow" target="_blank">
+            Đăng Ký
+        </a>
+    }
+
+</li>

@@ -1,0 +1,234 @@
+#main-footer{
+    background: #333;
+    color: #f2f2f2;
+    line-height: 1.5;
+    padding-bottom: 15px;
+    font-size: 15px;
+}
+
+#main-footer .right-sidebar{
+    text-align: center;
+}
+
+#main-footer a{
+    color:#1ba7fe;
+}
+
+.footer-links.container {
+    display:block;
+    margin-bottom: 20px;
+    background:#000;
+    padding: 10px 20px;
+}
+
+.footer-links h4 {
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #fff;
+    font-size: 1.3em;
+}
+
+.footer-links a {
+    color: #aaa;
+    margin-right:.75rem;
+    display: inline-block;
+}
+
+#search_result {
+    position: absolute;
+    top:50px;
+    left:0;
+    right:0;
+    background: #fff;
+    border:1px solid #ddd;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    display:none;
+    z-index:99;
+}
+
+#search_result.no-result {
+    text-align:center;
+    padding: 20px;
+    display:block;
+}
+
+#search_result.no-result:before {
+    content:"";
+}
+
+#search_result.has-result {
+    display:block;
+    background:#fff;
+}
+
+#search_result .results>a {
+    display:block;
+    padding: 5px;
+    border-bottom: 1px dashed #ddd;
+    font-size:14px;
+}
+
+#search_result .results>a.story h4 {
+    font-weight:600;
+    font-size: 14px;
+    color:#000;
+}
+
+#search_result .results>a.story em {
+    float:right;
+    font-size: 11px;
+    color:#888;
+}
+
+#search_result .results>a.story span {
+    font-size: 11px;
+    color:#888;
+}
+
+#search_result>a {
+    display:block;
+    font-size: 13px;
+    background: #555;
+    text-align:center;
+    padding: 8px 0;
+    color:#fff;
+}
+
+.social-button {
+    width:40px;
+    height:40px;
+    border-radius: 20px;
+    background:#3f51b5;
+    color:#fff;
+    display: inline-block;
+    line-height:40px;
+}
+
+#show-user-panel {
+    position: relative;
+    margin:7px 0;
+    display:block;
+    padding-right:15px;
+}
+
+#show-user-panel img {
+    border-radius: 30px;
+}
+
+#show-user-panel:after {
+    position: absolute;
+    content:"";
+    width:0;
+    height:0;
+    border:5px solid transparent;
+    border-top:5px solid #fff;
+    right:0;
+    top:17px;
+}
+
+#userPanel:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+#userPanel:hover .panel {
+    display:block;
+}
+
+#userPanel .panel {
+    width: 250px;
+    background: #fff;
+    position: absolute;
+    right: 0;
+    box-shadow:1px 1px 2px rgba(0,0,0,0.3);
+    border: 1px solid #ddd;
+    display:none;
+    z-index:99;
+}
+
+#userPanel .panel:before {
+    content:"";
+    position: absolute;
+    width:0;
+    height:0;
+    border:6px solid transparent;
+    border-bottom:6px solid #fff;
+    top: -12px;
+    right: 25px;
+}
+
+#userPanel .panel .userinfo {
+    color:#555;
+    border-bottom: 1px solid #ddd;
+    padding:10px;
+}
+
+#userPanel .panel .userinfo::after {
+    content:"";
+    display:table;
+    clear:both;
+}
+
+#userPanel .panel .userinfo h5 {
+    color:#000;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+#userPanel .panel .userinfo img {
+    border-radius:30px;
+    margin-bottom: 8px;
+    float: left;
+    margin-right:10px;
+    width:50px;
+}
+
+#userPanel .panel .userinfo p strong {
+    color:#df1a0c;
+}
+
+#userPanel .panel .userinfo .upoint {
+    margin-top: 10px;
+    margin-left: 60px;
+}
+
+#userPanel .panel nav a {
+    display:block;
+    padding: 8px 10px;
+    color: #555;
+    text-decoration: none;
+}
+
+#userPanel .panel nav a:hover {
+    background: rgba(0,0,0,0.1);
+}
+
+#userPanel .panel nav a i {
+    width:21px;float:left;
+}
+
+#userPanel .panel nav a#logout-btn {
+    border-top:1px solid #ddd;color:#df1a0c;
+}
+
+#login-ads {
+    position: fixed;
+    width:728px;
+    height:90px;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    bottom:0;
+    z-index:9999;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.3);
+}
+
+#close-login-ads {
+    position: absolute;
+    top:0;
+    right:0;
+    width:30px;
+    height:30px;
+    background: rgba(0,0,0,0.5)
+}

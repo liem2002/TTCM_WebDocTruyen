@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c3f4990f043f434db4559d14df80a457" Name="Diagram1" ZoomLevel="86">
+        <EntityTypeShape EntityType="WebDocTruyenModel.Chuong" Width="1.5" PointX="8.25" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebDocTruyenModel.DanhGia" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebDocTruyenModel.Nguoidung" Width="1.5" PointX="0.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebDocTruyenModel.TheLoai" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebDocTruyenModel.Truyen" Width="1.5" PointX="6" PointY="3" IsExpanded="true" />
+        <AssociationConnector Association="WebDocTruyenModel.FK__Chuong__Ma_Truye__2C3393D0" ManuallyRouted="false" />
+        <AssociationConnector Association="WebDocTruyenModel.FK__DanhGia__Ma_Nguo__2F10007B" ManuallyRouted="false" />
+        <AssociationConnector Association="WebDocTruyenModel.FK__DanhGia__Ma_Truy__300424B4" ManuallyRouted="false" />
+        <AssociationConnector Association="WebDocTruyenModel.FK__Truyen__Ma_Nguoi__29572725" ManuallyRouted="false" />
+        <AssociationConnector Association="WebDocTruyenModel.FK__Truyen__Ma_Thelo__286302EC" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="WebDocTruyenModel.ChucNang" Width="1.5" PointX="0.75" PointY="6.875" />
+        <EntityTypeShape EntityType="WebDocTruyenModel.PhanQuyen" Width="1.5" PointX="3" PointY="6.625" />
+        <AssociationConnector Association="WebDocTruyenModel.FK_PhanQuyen_ChucNang" />
+        <AssociationConnector Association="WebDocTruyenModel.FK_PhanQuyen_Nguoidung" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

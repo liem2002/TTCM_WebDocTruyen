@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WebDocTruyenModelStoreContainer" CdmEntityContainer="WebDocTruyenEntities">
+    <EntitySetMapping Name="Chuongs">
+      <EntityTypeMapping TypeName="WebDocTruyenModel.Chuong">
+        <MappingFragment StoreEntitySet="Chuong">
+          <ScalarProperty Name="Chuong_Id" ColumnName="Chuong_Id" />
+          <ScalarProperty Name="Chuong_So" ColumnName="Chuong_So" />
+          <ScalarProperty Name="Chuong_NoiDung" ColumnName="Chuong_NoiDung" />
+          <ScalarProperty Name="Truyen_Id" ColumnName="Truyen_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Truyens">
+      <EntityTypeMapping TypeName="WebDocTruyenModel.Truyen">
+        <MappingFragment StoreEntitySet="Truyen">
+          <ScalarProperty Name="Truyen_Id" ColumnName="Truyen_Id" />
+          <ScalarProperty Name="Truyen_Ma" ColumnName="Truyen_Ma" />
+          <ScalarProperty Name="Truyen_Ten" ColumnName="Truyen_Ten" />
+          <ScalarProperty Name="Truyen_HinhDaiDien" ColumnName="Truyen_HinhDaiDien" />
+          <ScalarProperty Name="Truyen_Loai" ColumnName="Truyen_Loai" />
+          <ScalarProperty Name="Truyen_TheLoai" ColumnName="Truyen_TheLoai" />
+          <ScalarProperty Name="Truyen_TacGia" ColumnName="Truyen_TacGia" />
+          <ScalarProperty Name="Truyen_MoTa" ColumnName="Truyen_MoTa" />
+          <ScalarProperty Name="Truyen_LuotView" ColumnName="Truyen_LuotView" />
+          <ScalarProperty Name="Truyen_NgayDang" ColumnName="Truyen_NgayDang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

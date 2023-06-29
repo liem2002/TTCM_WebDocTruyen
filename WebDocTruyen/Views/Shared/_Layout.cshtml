@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html>
+<html lang="vi" xml:lang="vi">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Đọc Truyện Online Hay Và Mới Nhất - Dtruyen.com (Webtruyen.com)</title>
+    <link href="~/Content/css/style.css" rel="stylesheet" />
+    <link href="~/Content/css/base.css" rel="stylesheet" />
+    <link href="~/Content/css/main.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Content/fonts/fontawesome-free-6.4.0-web/css/all.min.css">
+    <script src="~/Content/js/main.js"></script>
+    <script src="~/Content/js/form.js"></script>
+</head>
+
+
+<body itemscope itemtype="http://schema.org/WebPage">
+    <!-- Navbar Phần chung-->
+    <header id="main-header">
+        <div class="container">
+            <h1 class="logo">
+                <a href="#" title="doc truyen online">doc truyen online</a>
+            </h1>
+            <ul class="main-nav">
+                <li>
+                    <a href="#">
+                        <i class="fa-solid fa-tag"></i>
+                        Thể loại
+                    </a>
+                    <ul>
+                        <li>
+                            <a title="Truyện tiên hiệp" href="">
+                                <i class="fa-solid fa-tag"></i>
+                                Tiên Hiệp
+                            </a>
+                        </li>
+                        <li>
+                            <a title="Truyện kiếm hiệp" href="">
+                                <i class="fa-solid fa-tag"></i>
+                                Kiếm Hiệp
+                            </a>
+                        </li>
+                        <li>
+                            <a title="Truyện ngôn tình" href="">
+                                <i class="fa-solid fa-tag"></i>
+                                Ngôn Tình
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" title="Truyện Teen">
+                                <i class="fa-solid fa-tag"></i>
+                                Truyện Teen
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" title="Truyện đô Thị">
+                                <i class="fa-solid fa-tag"></i>
+                                Đô Thị
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" title="Truyện quân sự">
+                                <i class="fa-solid fa-tag"></i>
+                                Quân Sự
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" rel="nofollow">
+                        <i class="fa-solid fa-list"></i>
+                        Sắp xếp
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="" title="Truyện Dịch" class="vip-link">
+                                <i class="fa-solid fa-gem"></i>
+                                Truyện Dịch
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <i class="fa-solid fa-refresh"></i>
+                                Mới Cập Nhật
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" title="Truyện mới đăng">
+                                <i class="fa-solid fa-cloud-arrow-up"></i>
+                                Mới Đăng
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" title="Truyện đọc nhiều">
+                                <i class="fa-solid fa-eye"></i>
+                                Xem Nhiều
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" title="Truyện được yêu thích">
+                                <i class="fa-solid fa-thumbs-up"></i>
+                                Yêu Thích
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" title="Truyện full">
+                                <i class="fa-solid fa-signal"></i>
+                                Truyện Full
+                            </a>
+                        </li>
+                        <li class="compose-link">
+                            <a href="" title="Truyện Sáng Tác">
+                                <i class="fa-solid fa-star"></i>
+                                Thành Viên Sáng Tác
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                @Html.Partial("~/Views/Layout/HeaderTopPartial.cshtml")
+                @*
+            <li>
+            <a href="" title="" rel="nofollow" target="_blank">
+
+                <i class="fa-solid fa-user"></i>
+                User
+            </a>
+        </li>
+                *@
+            </ul>
+            <div id="search_form" itemscope itemtype="https://schema.org/WebSite">
+            @using (Html.BeginForm("KQTimKiem", "TimKiem"))
+                {
+                <meta itemprop="url" content="" />
+                <form itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction" role="search" method="get" action="">
+                    
+                    <input  type="text" name="sTuKhoa" aria-label="Từ khóa tìm kiếm" placeholder="Tìm truyện" autocomplete="off"  style=" margin-top:0">
+                    <button name="action_search" id="searchsubmit" type="submit" aria-label="Tìm kiếm">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </form>
+                <div id="search_result"></div>
+                }
+            </div>
+
+        </div>
+    </header>
+    @RenderBody()
+    <!-- Main Body-->
+    
+
+    <!-- Footer phần chung -->
+    <footer id="footer">
+        <div class="footer">
+            <div class="footer__container">
+                <h2 class="footer__container-heading">Chính sách bảo mật</h2>
+                <p class="footer__container-tag">Cookie và dữ liệu</p>
+                <p class="footer__container-tag">Quyền chủ thể dữ liệu</p>
+            </div>
+
+            <div class="footer__container">
+                <h2 class="footer__container-heading">Điều khoản sử dụng</h2>
+                <p class="footer__container-tag">Tuân thủ quy định</p>
+                <p class="footer__container-tag">Không quảng cáo trái phép</p>
+                <p class="footer__container-tag">Không sao chép, nhân bản trái phép</p>
+            </div>
+
+            <div class="footer__container">
+                <h2 class="footer__container-heading">Liên hệ với chúng tôi</h2>
+                <p class="footer__container-tag">+84 12 3456 789</p>
+                <p class="footer__container-tag">+84 32 5678 999</p>
+                <p class="footer__container-tag">liempro10122gmail.com</p>
+            </div>
+
+            <div class="footer__container">
+                <h2 class="footer__container-heading">Vấn đề bản quyền</h2>
+                <p class="footer__container-tag">Thông báo vi phạm</p>
+            </div>
+
+            <div class="footer__container">
+                <h2 class="footer__container-heading">Follows</h2>
+                <i class="footer__container-icon fa-brands fa-facebook"></i>
+                <i class="footer__container-icon fa-brands fa-instagram"></i>
+                <i class="footer__container-icon fa-brands fa-twitter"></i>
+            </div>
+        </div>
+
+        <div class="footer__copyright">
+            <p class="footer__copyright-text">© 2023 - Bản quyền thuộc về dTruyen</p>
+        </div>
+    </footer>
+
+
+
+
+</body>
+</html>

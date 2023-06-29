@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WebDocTruyenModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Chuong">
+    <Key>
+      <PropertyRef Name="Chuong_Id" />
+    </Key>
+    <Property Name="Chuong_Id" Type="int" Nullable="false" />
+    <Property Name="Chuong_So" Type="varchar" MaxLength="50" />
+    <Property Name="Chuong_NoiDung" Type="nvarchar(max)" />
+    <Property Name="Truyen_Id" Type="int" />
+  </EntityType>
+  <EntityType Name="Truyen">
+    <Key>
+      <PropertyRef Name="Truyen_Id" />
+    </Key>
+    <Property Name="Truyen_Id" Type="int" Nullable="false" />
+    <Property Name="Truyen_Ma" Type="varchar" MaxLength="50" />
+    <Property Name="Truyen_Ten" Type="nvarchar(max)" />
+    <Property Name="Truyen_HinhDaiDien" Type="nvarchar" MaxLength="50" />
+    <Property Name="Truyen_Loai" Type="int" />
+    <Property Name="Truyen_TheLoai" Type="nvarchar" MaxLength="50" />
+    <Property Name="Truyen_TacGia" Type="nvarchar(max)" />
+    <Property Name="Truyen_MoTa" Type="nvarchar(max)" />
+    <Property Name="Truyen_LuotView" Type="int" />
+    <Property Name="Truyen_NgayDang" Type="datetime" />
+  </EntityType>
+  <Association Name="FK__Chuong__Truyen_I__267ABA7A">
+    <End Role="Truyen" Type="Self.Truyen" Multiplicity="0..1" />
+    <End Role="Chuong" Type="Self.Chuong" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Truyen">
+        <PropertyRef Name="Truyen_Id" />
+      </Principal>
+      <Dependent Role="Chuong">
+        <PropertyRef Name="Truyen_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="WebDocTruyenModelStoreContainer">
+    <EntitySet Name="Chuong" EntityType="Self.Chuong" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Truyen" EntityType="Self.Truyen" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Chuong__Truyen_I__267ABA7A" Association="Self.FK__Chuong__Truyen_I__267ABA7A">
+      <End Role="Truyen" EntitySet="Truyen" />
+      <End Role="Chuong" EntitySet="Chuong" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

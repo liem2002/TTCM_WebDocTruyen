@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WebDocTruyenModelStoreContainer" CdmEntityContainer="WebDocTruyenEntities">
+    <EntitySetMapping Name="Chuongs">
+      <EntityTypeMapping TypeName="WebDocTruyenModel.Chuong">
+        <MappingFragment StoreEntitySet="Chuong">
+          <ScalarProperty Name="Ma_Chuong" ColumnName="Ma_Chuong" />
+          <ScalarProperty Name="So_Chuong" ColumnName="So_Chuong" />
+          <ScalarProperty Name="Ten_Chuong" ColumnName="Ten_Chuong" />
+          <ScalarProperty Name="NoiDung_Chuong" ColumnName="NoiDung_Chuong" />
+          <ScalarProperty Name="Luotview_Chuong" ColumnName="Luotview_Chuong" />
+          <ScalarProperty Name="Ma_Truyen" ColumnName="Ma_Truyen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DanhGias">
+      <EntityTypeMapping TypeName="WebDocTruyenModel.DanhGia">
+        <MappingFragment StoreEntitySet="DanhGia">
+          <ScalarProperty Name="Ma_DanhGia" ColumnName="Ma_DanhGia" />
+          <ScalarProperty Name="NoiDung_DanhGia" ColumnName="NoiDung_DanhGia" />
+          <ScalarProperty Name="Ma_Nguoidung" ColumnName="Ma_Nguoidung" />
+          <ScalarProperty Name="Ma_Truyen" ColumnName="Ma_Truyen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Nguoidungs">
+      <EntityTypeMapping TypeName="WebDocTruyenModel.Nguoidung">
+        <MappingFragment StoreEntitySet="Nguoidung">
+          <ScalarProperty Name="Ma_Nguoidung" ColumnName="Ma_Nguoidung" />
+          <ScalarProperty Name="Ten_Nguoidung" ColumnName="Ten_Nguoidung" />
+          <ScalarProperty Name="Email_Nguoidung" ColumnName="Email_Nguoidung" />
+          <ScalarProperty Name="Pass_Nguoidung" ColumnName="Pass_Nguoidung" />
+          <ScalarProperty Name="Quyen_Nguoidung" ColumnName="Quyen_Nguoidung" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TheLoais">
+      <EntityTypeMapping TypeName="WebDocTruyenModel.TheLoai">
+        <MappingFragment StoreEntitySet="TheLoai">
+          <ScalarProperty Name="Ma_Theloai" ColumnName="Ma_Theloai" />
+          <ScalarProperty Name="Ten_Theloai" ColumnName="Ten_Theloai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Truyens">
+      <EntityTypeMapping TypeName="WebDocTruyenModel.Truyen">
+        <MappingFragment StoreEntitySet="Truyen">
+          <ScalarProperty Name="Ma_Truyen" ColumnName="Ma_Truyen" />
+          <ScalarProperty Name="Ten_Truyen" ColumnName="Ten_Truyen" />
+          <ScalarProperty Name="HinhDaiDien" ColumnName="HinhDaiDien" />
+          <ScalarProperty Name="MoTa_Truyen" ColumnName="MoTa_Truyen" />
+          <ScalarProperty Name="NgayDang_Truyen" ColumnName="NgayDang_Truyen" />
+          <ScalarProperty Name="Ma_Theloai" ColumnName="Ma_Theloai" />
+          <ScalarProperty Name="Ma_Nguoidung" ColumnName="Ma_Nguoidung" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChucNangs">
+      <EntityTypeMapping TypeName="WebDocTruyenModel.ChucNang">
+        <MappingFragment StoreEntitySet="ChucNang">
+          <ScalarProperty Name="Ten_ChucNang" ColumnName="Ten_ChucNang" />
+          <ScalarProperty Name="Ma_ChucNang" ColumnName="Ma_ChucNang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PhanQuyens">
+      <EntityTypeMapping TypeName="WebDocTruyenModel.PhanQuyen">
+        <MappingFragment StoreEntitySet="PhanQuyen">
+          <ScalarProperty Name="Ghi_Chu" ColumnName="Ghi_Chu" />
+          <ScalarProperty Name="maChucNang" ColumnName="maChucNang" />
+          <ScalarProperty Name="maNguoiDung" ColumnName="maNguoiDung" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

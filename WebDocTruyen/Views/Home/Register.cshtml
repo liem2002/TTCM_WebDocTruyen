@@ -1,0 +1,36 @@
+﻿@using CaptchaMvc.HtmlHelpers
+@using CaptchaMvc;
+
+@using WebDocTruyen.Models
+@model WebDocTruyen.Context.Nguoidung
+
+
+@{
+    ViewBag.Title = "Register";
+}
+<div class="to">
+    @using (Html.BeginForm())
+    {
+        <div class="form" style="height:515px;">
+            <h2>Đăng ký Thành Viên</h2>
+            <i class="fa-solid fa-user"></i>
+
+
+            <label style="margin-left: -162px;">Họ tên</label>
+            @Html.TextBox("Ten_NguoiDung")
+            <label style="margin-left: -163px;">Email</label>
+            @Html.TextBox("Email_NguoiDung")
+            <label style="margin-left: -138px;">Mật Khẩu</label>
+            @Html.Password("Pass_NguoiDung", null, new { style = "width: 70%" })
+
+            @Html.MathCaptcha()
+
+            <div style="color: red;">@ViewBag.ThongBao</div>
+
+            <input id="submit" type="submit" name="submit" value="Gửi">
+        </div>
+    }
+
+</div>
+<link href="~/Content/css/dangky.css" rel="stylesheet" />
+

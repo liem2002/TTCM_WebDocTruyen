@@ -1,0 +1,119 @@
+﻿@model List<WebDocTruyen.Context.Chuong>
+
+@{
+    ViewBag.Title = "Chapter";
+}
+
+<div id="main" class="main" data-type="chapter" role="main" itemscope itemprop="mainContentOfPage">
+    <div id="chapter-page">
+        @foreach (var item in Model.Take(1))
+        {
+            <div id="breadcrumb" itemscope="" itemtype="https://schema.org/BreadcrumbList">
+                <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                    <a href="" itemprop="item">
+                        <i class="fa-solid fa-house"></i>
+                        <span itemprop="name">Trang Chủ</span>
+                        <meta itemprop="position" content="1">
+                    </a>
+                    <i class="fa-solid fa-angle-right"></i>
+                </span>
+                <h1 itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+                    <a href="" itemprop="item">
+                        <span itemprop="name">@item.Truyen.Ten_Truyen</span>
+                        <meta itemprop="position" content="2">
+                    </a>
+                    <i class="fa-solid fa-angle-right"></i>
+                </h1>
+                <span itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+                    <a href="" itemprop="item">
+                        <span itemprop="name"> Chương @item.So_Chuong: @item.Ten_Chuong</span>
+                        <meta itemprop="position" content="3">
+                    </a>
+                </span>
+            </div>
+        }
+        
+
+        @foreach (var item in Model.Take(1))
+        {
+
+            <div id="chapter" data-id="1645">
+                <header>
+                    <p class="story-title">
+                        <a href="" title="Phàm Nhân Tu Tiên">@item.Truyen.Ten_Truyen</a>
+                    </p>
+                    <h2 class="chapter-title">@item.Ten_Chuong</h2>
+                    
+                </header>
+                <div class="chapter-button clearfix">
+                    <a href="@Url.Action("Chapter", "Chuong", new { id = item.So_Chuong -1})" title="Chương Trước" class="chap-nav">
+                        <i class="fa-solid fa-angle-left"></i>
+                        Trước
+                    </a>
+                    <a href="#" rel="nofollow" class="all-chapters" title="Chapters">
+                        <i class="fa-solid fa-list"></i>
+                    </a>
+                    <a href="#" rel="nofollow" class="config" title="Config">
+                        <i class="fa-solid fa-gear"></i>
+                    </a>
+                    <a href="@Url.Action("Chapter", "Chuong", new { id = item.So_Chuong + 1})" title="Chương Sau" class="chap-nav">
+                        Sau <i class="fa-solid fa-angle-right"></i>
+                    </a>
+                </div>
+                <div id="configReader"></div>
+                <div id="chapter-content" data-vip="0">
+                    @item.NoiDung_Chuong
+                </div>
+                <p class="text-webtruyen">
+                    Bạn đang đọc truyện trên: <span style="color: blue; font-weight: bold;">Dtruyen.com</span>
+                </p>
+                <div class="chapter-button clearfix">
+                    <a href="@Url.Action("Chapter", "Chuong", new { id = item.So_Chuong -1})" title="Chương Trước" class="chap-nav">
+                        <i class="fa-solid fa-angle-left"></i>
+                        Trước
+                    </a>
+                    <a href="#" rel="nofollow" class="config" title="Config">
+                        <i class="fa-solid fa-gear"></i>
+                    </a>
+                    <a href="@Url.Action("Chapter", "Chuong", new { id = item.So_Chuong +1})" title="Chương Sau" class="chap-nav">
+                        Sau <i class="fa-solid fa-angle-right"></i>
+                    </a>
+                </div>
+                <div class="wt-ads2">
+                    <a href="" target="_blank" title="truyen full">
+                        <img src="https://dtruyen.com/quangcao/truyen-full.jpg" alt="truyện full" style="margin-top: 10px;" />
+                    </a>
+                </div>
+            </div>
+        }
+
+        <div class="container">
+            <div class="maincm">
+                <div class="card-box" id="comments">
+                    <header>
+                        <h3>
+                            <i class="fa-solid fa-comment"></i>
+                            Nhận xét của độc giả về truyện
+                        </h3>
+                    </header>
+                    <form class="comment-form" method="post">
+                        <input type="hidden" name="storyID" id="storyID" value="3" />
+                        <input type="hidden" name="replyTo" value="0" />
+                        <textarea aria-label="Bình luận" id="comment-message" name="message" placeholder="Nội dung bình luận tối thiểu 15 ký tự, tối đa 500 ký tự!"></textarea>
+                        <div class="text-right">
+                            <button type="submit">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                Gửi
+                            </button>
+                        </div>
+                    </form>
+                    <ul id="comment-list" class="comment-list"></ul>
+                    <div id="comment-more"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<link href="~/Content/css/chapter.css" rel="stylesheet" />

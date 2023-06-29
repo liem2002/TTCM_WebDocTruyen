@@ -1,0 +1,83 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<WebDocTruyen.Context.Truyen>
+
+@{
+    ViewBag.Title = "DanhSach";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="margin-left:300px; color:red;">Danh Sách Truyện</h2>
+
+<p style="margin-left:300px;">
+    @Html.ActionLink("Create New", "Create")
+</p>
+@using (Html.BeginForm("DanhSach", "HomeAdmin", FormMethod.Get))
+{
+                <p style="margin-left: 300px;">
+                    Tìm tên truyện : @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+                    <input type="submit" value="Tìm Kiếm" />
+                </p>
+}
+<table style="margin-left:300px;">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().Ma_Truyen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().Ten_Truyen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().HinhDaiDien)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().MoTa_Truyen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().NgayDang_Truyen)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().Ma_Theloai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().Ma_Nguoidung)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ma_Truyen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ten_Truyen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HinhDaiDien)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MoTa_Truyen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayDang_Truyen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ma_Theloai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ma_Nguoidung)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new {  id=item.Ma_Truyen }) |
+            @Html.ActionLink("Details", "Details", new { id = item.Ma_Truyen }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Ma_Truyen })
+        </td>
+    </tr>
+}
+
+</table>
+<div style="margin-left:900px;">
+    Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+    @Html.PagedListPager(Model, page => Url.Action("DanhSach", new {page, currentFilter = ViewBag.CurrenFilter}))
+</div>
